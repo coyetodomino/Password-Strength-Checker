@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: #fffffff2;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.password-input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+input[type="password"]:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.strength-indicator {
+    margin-bottom: 20px;
+}
+
+.strength-bar-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.strength-text {
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.criteria-list {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.criteria-list h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.criteria-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.criteria-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.criteria-text {
+    flex: 1;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Strength levels */
+.very-weak {
+    background: linear-gradient(90deg, #ff4757, #ff3742);
+    color: white;
+}
+
+.weak {
+    background: linear-gradient(90deg, #ff6b7a, #ff5252);
+    color: white;
+}
+
+.fair {
+    background: linear-gradient(90deg, #ffa726, #ff9800);
+    color: white;
+}
+
+.good {
+    background: linear-gradient(90deg, #66bb6a, #4caf50);
+    color: white;
+}
+
+.strong {
+    background: linear-gradient(90deg, #42a5f5, #2196f3);
+    color: white;
+}
+
+.very-strong {
+    background: linear-gradient(90deg, #26a69a, #009688);
+    color: white;
+}
+
+/* Criteria states */
+.criteria-met {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.criteria-met .criteria-icon {
+    background: #4caf50;
+    color: white;
+}
+
+.criteria-not-met .criteria-icon {
+    background: #f5f5f5;
+    color: #999;
+    border: 2px solid #ddd;
+}
+
+.password-tips {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.password-tips h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.password-tips ul {
+    list-style: none;
+    color: #555;
+}
+
+.password-tips li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.password-tips li:before {
+    content: "•";
+    color: #667eea;
+    position: absolute;
+    left: 0;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input[type="password"], input[type="text"] {
+        padding: 12px;
+    }
+}
